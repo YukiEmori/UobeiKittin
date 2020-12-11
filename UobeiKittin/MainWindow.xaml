@@ -24,7 +24,27 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
-        
-        
+        <!--運用メニュー-->
+        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,33,22">
+            <ToggleButton.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="オーダーリスト" />
+                    <MenuItem Header="売り切れ設定"  />   
+                    <Separator />
+                    <MenuItem Header="閉じる"/>
+                </ContextMenu>
+            </ToggleButton.ContextMenu>
+            <WrapPanel Margin="5,0">
+                <Path Width="8" Height="6" Stretch="Fill" Fill="Black" Data="F1 M0,0 L10,0 L5,10 Z "/>
+                <TextBlock Text="運用メニュー" FontSize="14"/>
+                <Border Width="8"/>
+            </WrapPanel>
+        </ToggleButton>
+
+        <Label Content="0    件" Grid.Row="0" Grid.Column="1"  Margin="10,5,58,22"
+               Background="#FF4D4747" Foreground="White" VerticalContentAlignment="Center"
+               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Right" FontSize="22"
+               x:Name="countkensuu"/>
+
     </Grid>
 </Window>
