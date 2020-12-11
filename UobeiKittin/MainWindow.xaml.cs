@@ -32,8 +32,6 @@ namespace UobeiKittin {
             btn.ContextMenu.Placement = PlacementMode.Bottom;
         }
 
-        private void ToggleButton_Loadeda(object sender, RoutedEventArgs e) {
-            
-        }
+       
     }
 }
