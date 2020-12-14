@@ -25,7 +25,7 @@
         </Grid.ColumnDefinitions>
 
         <!--運用メニュー-->
-        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,33,22">
+        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,21,22">
             <ToggleButton.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="オーダーリスト" />
@@ -42,7 +42,7 @@
         </ToggleButton>
 
         <!--件数-->
-        <Label Content="0  件" Grid.Row="0" Grid.Column="1"  Margin="0,5,100,22"
+        <Label Content="0  件" Grid.Row="0" Grid.Column="1"  Margin="0,5,92,22"
                Background="#FF4D4747" Foreground="White" VerticalContentAlignment="Center"
                ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Right" FontSize="22"
                x:Name="countkensuu"/>
@@ -53,12 +53,9 @@
           VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
 
         <!--平均タイム時間-->
-        <Label Content="0:00" Grid.Row="0" Grid.Column="4"  Margin="0,5,40,22"
+        <Label Content="0:00" Grid.Row="0" Grid.Column="3"  Margin="149,5,40,22"
                Background="DarkGray" Foreground="Black" VerticalContentAlignment="Center"
-               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold" 
+               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold" Grid.ColumnSpan="2" 
                />
-
-
-
     </Grid>
 </Window>

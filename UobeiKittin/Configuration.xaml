@@ -30,7 +30,7 @@
         </Grid.ColumnDefinitions>
 
         <!--タイトル-->
-        <Label Content="品切設定・商品コード表示" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Margin="95,6,0,0" Background="White"
+        <Label Content="品切設定・商品コード" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Margin="95,6,0,0" Background="White"
                BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="47"
           VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
         

@@ -9,8 +9,51 @@
       Title="orderlist">
 
     <Grid>
-        
+        <!--行-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <!--列-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!--運用メニュー-->
+        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,21,22">
+            <ToggleButton.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="オーダーリスト" />
+                    <MenuItem Header="売り切れ設定"  />
+                    <Separator />
+                    <MenuItem Header="閉じる"/>
+                </ContextMenu>
+            </ToggleButton.ContextMenu>
+            <WrapPanel Margin="5,0">
+                <Path Width="8" Height="6" Stretch="Fill" Fill="Black" Data="F1 M0,0 L10,0 L5,10 Z "/>
+                <TextBlock Text="運用メニュー" FontSize="14"/>
+                <Border Width="8"/>
+            </WrapPanel>
+        </ToggleButton>
+
+        <!--タイトル-->
+        <Label Content="注  文  履  歴" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="81,6,0,0" Background="White"
+               BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="47"
+          VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
+
+        <!--ボタン-->
+        <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7"></Button>
+        <Button Content="マイナスオーダー" Grid.Column="5" Grid.Row="2" FontSize="20" Margin="7,7,10,7"></Button>
+        <Button Content="▲" Grid.Column="4" Grid.Row="1" FontSize="20" Margin="5,35,5,35"></Button>
+        <Button Content="▼" Grid.Column="4" Grid.Row="3" FontSize="20" Margin="5,35,5,35"></Button>
 
     </Grid>
 </Page>
