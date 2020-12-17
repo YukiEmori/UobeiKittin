@@ -21,5 +21,9 @@ namespace UobeiKittin {
         public orderlist() {
             InitializeComponent();
         }
+
+        private void ToggleButton_Loaded(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
