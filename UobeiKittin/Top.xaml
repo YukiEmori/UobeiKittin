@@ -51,7 +51,7 @@
                x:Name="countkensuu"/>
 
         <!--タイトル-->
-        <Label Content="握り・軍艦・巻物・サイド・デザート" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="81,6,0,0" Background="White"
+        <Label Content="握り・軍艦・巻物・サイド・デザート" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="86,7,0,0" Background="White"
                BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="47"
           VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
 

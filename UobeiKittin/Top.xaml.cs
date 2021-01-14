@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -22,8 +23,13 @@ namespace UobeiKittin {
             InitializeComponent();
         }
 
+        //運用メニュー
         private void ToggleButton_Loaded(object sender, RoutedEventArgs e) {
+            var btn = (ToggleButton)sender;
 
+            btn.SetBinding(ToggleButton.IsCheckedProperty, new Binding("IsOpen") { Source = btn.ContextMenu });
+            btn.ContextMenu.PlacementTarget = btn;
+            btn.ContextMenu.Placement = PlacementMode.Bottom;
         }
 
         private void config_Click(object sender, RoutedEventArgs e) {

@@ -39,7 +39,7 @@
         <Button Content="軍艦巻物" Grid.Column="2" Grid.Row="1" FontSize="20" Margin="7"></Button>
         <Button Content="サイド" Grid.Column="3" Grid.Row="1" FontSize="20" Margin="7"></Button>
         <Button Content="デザート" Grid.Column="4" Grid.Row="1" FontSize="20" Margin="7"></Button>
-        <Button Content="閉じる" Grid.Column="0" Grid.Row="6" FontSize="20" Margin="7"></Button>
+        <Button Content="閉じる" Grid.Column="0" Grid.Row="6" FontSize="20" Margin="7" Click="Button_Click"></Button>
         <Button Content="品切解除" Grid.Column="5" Grid.Row="5" FontSize="20" Margin="7"></Button>
         <Button Content="品切設定" Grid.Column="5" Grid.Row="3" FontSize="20" Margin="7"></Button>
         <Button Content="登録" Grid.Column="5" Grid.Row="6" FontSize="20" Margin="7"></Button>
