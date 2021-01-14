@@ -35,7 +35,7 @@
                     <Separator />
                     <MenuItem Header="売り切れ設定" Click="config_Click"  />
                     <Separator />
-                    <MenuItem Header="閉じる"/>
+                    <MenuItem Header="閉じる" Click="MenuItem_Click"/>
                 </ContextMenu>
             </ToggleButton.ContextMenu>
             <WrapPanel Margin="5,0">
@@ -44,12 +44,12 @@
                 <Border Width="8"/>
             </WrapPanel>
         </ToggleButton>
-        
+
 
         <!--タイトル-->
-        <Label Content="注  文  履  歴" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="81,6,0,0" Background="White"
-               BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="47"
-          VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
+        <Label Content = "注 　 文  　履  　歴" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"  Margin="24,6,25,20"
+               Background="White" BorderBrush="Black"  BorderThickness="1" Foreground="Black" VerticalContentAlignment="Center"
+               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold"  ></Label>
 
         <!--ボタン-->
         <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7" Click="Button_Click"></Button>

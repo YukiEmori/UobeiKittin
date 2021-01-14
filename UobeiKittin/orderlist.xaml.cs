@@ -53,6 +53,14 @@ namespace UobeiKittin {
             NavigationService.Navigate(toppage);
         }
 
+        //Topページに移動
+        private void MenuItem_Click(object sender, RoutedEventArgs e) {
+            var toppage = new Top();
+            NavigationService.Navigate(toppage);
+        }
+
         #endregion
+
+
     }
 }
