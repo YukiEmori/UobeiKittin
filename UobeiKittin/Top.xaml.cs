@@ -15,16 +15,20 @@ using System.Windows.Shapes;
 
 namespace UobeiKittin {
     /// <summary>
-    /// orderlist.xaml の相互作用ロジック
+    /// Top.xaml の相互作用ロジック
     /// </summary>
-   
-    public partial class orderlist : Page {
-        public orderlist() {
+    public partial class Top : Page {
+        public Top() {
             InitializeComponent();
         }
 
         private void ToggleButton_Loaded(object sender, RoutedEventArgs e) {
 
+        }
+
+        private void config_Click(object sender, RoutedEventArgs e) {
+            var page2 = new Configuration();
+            NavigationService.Navigate(page2);
         }
     }
 }

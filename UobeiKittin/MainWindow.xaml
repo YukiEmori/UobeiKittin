@@ -8,56 +8,8 @@
         Title="MainWindow" Height="450" Width="800" Background="Beige">
 
     <Grid>
-        <!--行-->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
-        <!--列-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <!--運用メニュー-->
-        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,21,22">
-            <ToggleButton.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="オーダーリスト" />
-                    <MenuItem Header="売り切れ設定"  />
-                    <Separator />
-                    <MenuItem Header="閉じる"/>
-                </ContextMenu>
-            </ToggleButton.ContextMenu>
-            <WrapPanel Margin="5,0">
-                <Path Width="8" Height="6" Stretch="Fill" Fill="Black" Data="F1 M0,0 L10,0 L5,10 Z "/>
-                <TextBlock Text="運用メニュー" FontSize="14"/>
-                <Border Width="8"/>
-            </WrapPanel>
-        </ToggleButton>
-
-        <!--件数-->
-        <Label Content="0  件" Grid.Row="0" Grid.Column="1"  Margin="0,5,92,22"
-               Background="#FF4D4747" Foreground="White" VerticalContentAlignment="Center"
-               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Right" FontSize="22"
-               x:Name="countkensuu"/>
-
-        <!--タイトル-->
-        <Label Content="握り・軍艦・巻物・サイド・デザート" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="81,6,0,0" Background="White"
-               BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="47"
-          VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
-
-        <!--平均タイム時間-->
-        <Label Content="0:00" Grid.Row="0" Grid.Column="3"  Margin="149,5,40,22"
-               Background="DarkGray" Foreground="Black" VerticalContentAlignment="Center"
-               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold" Grid.ColumnSpan="2" 
-               />
+        <Frame Name="frame" NavigationUIVisibility="Hidden"/>
+        
     </Grid>
 
 </Window>
