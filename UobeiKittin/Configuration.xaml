@@ -30,10 +30,11 @@
         </Grid.ColumnDefinitions>
 
         <!--タイトル-->
-        <Label Content="品切設定・商品コード" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Margin="95,6,0,0" Background="White"
-               BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="47"
-          VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
-        
+        <Label Content="品切設定・商品コード"  Margin="63,10,40,10"
+               Background="White" BorderBrush="Black"  BorderThickness="1" Foreground="Black" VerticalContentAlignment="Center"
+               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" Grid.ColumnSpan="4" Grid.Column="1" 
+               />
+
         <!--ボタン-->
         <Button Content="握り" Grid.Column="1" Grid.Row="1" FontSize="20" Margin="7"></Button>
         <Button Content="軍艦巻物" Grid.Column="2" Grid.Row="1" FontSize="20" Margin="7"></Button>

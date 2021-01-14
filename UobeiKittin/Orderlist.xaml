@@ -28,13 +28,14 @@
         </Grid.ColumnDefinitions>
 
         <!--運用メニュー-->
-        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,21,22">                             
+        <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,21,22">
             <ToggleButton.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="オーダーリスト" />
-                    <MenuItem Header="売り切れ設定"  />
+                    <MenuItem Header="オーダーリスト" Click="order_Click" />
                     <Separator />
-                    <MenuItem Header="閉じる"/>    
+                    <MenuItem Header="売り切れ設定" Click="config_Click"  />
+                    <Separator />
+                    <MenuItem Header="閉じる"/>
                 </ContextMenu>
             </ToggleButton.ContextMenu>
             <WrapPanel Margin="5,0">
@@ -51,7 +52,7 @@
           VerticalAlignment="Top" Width="344" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold" />
 
         <!--ボタン-->
-        <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7"></Button>
+        <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7" Click="Button_Click"></Button>
         <Button Content="マイナスオーダー" Grid.Column="5" Grid.Row="2" FontSize="20" Margin="7,7,10,7"></Button>
         <Button Content="▲" Grid.Column="4" Grid.Row="1" FontSize="20" Margin="5,35,5,35"></Button>
         <Button Content="▼" Grid.Column="4" Grid.Row="3" FontSize="20" Margin="5,35,5,35"></Button>

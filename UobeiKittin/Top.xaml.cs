@@ -23,7 +23,9 @@ namespace UobeiKittin {
             InitializeComponent();
         }
 
-        //運用メニュー
+　　　　
+
+        //運用メニューのページを出す
         private void ToggleButton_Loaded(object sender, RoutedEventArgs e) {
             var btn = (ToggleButton)sender;
 
@@ -32,9 +34,16 @@ namespace UobeiKittin {
             btn.ContextMenu.Placement = PlacementMode.Bottom;
         }
 
+        //売切れ設定ページに移動
         private void config_Click(object sender, RoutedEventArgs e) {
-            var page2 = new Configuration();
-            NavigationService.Navigate(page2);
+            var confingpage = new Configuration();
+            NavigationService.Navigate(confingpage);
+        }
+
+        //オーダーリストのページに移動
+        private void order_Click(object sender, RoutedEventArgs e) {
+            var orderpage = new orderlist();
+            NavigationService.Navigate(orderpage);
         }
     }
 }
