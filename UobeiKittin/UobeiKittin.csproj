@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SushiOrderDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Top.xaml.cs">
       <DependentUpon>Top.xaml</DependentUpon>
     </Compile>
@@ -110,6 +115,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SushiOrderDBDataSet.xsc">
+      <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SushiOrderDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SushiOrderDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SushiOrderDBDataSet.xss">
+      <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
