@@ -25,5 +25,7 @@ namespace UobeiKittin {
         private void btconfig_Click(object sender, RoutedEventArgs e) {
            
         }
+
+        
     }
 }

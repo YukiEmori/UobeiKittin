@@ -4,11 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UobeiKittin"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" Background="Beige"
+      mc:Ignorable="d"                                           
+      d:DesignHeight="450" d:DesignWidth="800" Background="Beige" Loaded="Window_Loaded"
       Title="Top">
+    <Page.Resources>
+        <local:SushiOrderDBDataSet x:Key="sushiOrderDBDataSet"/>
+        <CollectionViewSource x:Key="testViewSource" Source="{Binding test, Source={StaticResource sushiOrderDBDataSet}}"/>
+    </Page.Resources>
 
-    <Grid>
+    <Grid DataContext="{StaticResource testViewSource}">
         <!--行-->
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -62,5 +66,7 @@
                Background="DarkGray" Foreground="Black" VerticalContentAlignment="Center"
                ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold" 
                />
+
+
     </Grid>
 </Page>
