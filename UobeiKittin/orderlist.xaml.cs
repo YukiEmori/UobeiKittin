@@ -48,19 +48,23 @@ namespace UobeiKittin {
         }
 
         //Topページに移動
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            var toppage = new Top();
-            NavigationService.Navigate(toppage);
+        private void Close_Click(object sender, RoutedEventArgs e) {
+            Topseni(sender, e);
         }
-
+        
         //Topページに移動
         private void MenuItem_Click(object sender, RoutedEventArgs e) {
+            Topseni(sender, e);
+        }
+
+        //Topページの遷移
+        public void Topseni(object sender, RoutedEventArgs e) {
             var toppage = new Top();
             NavigationService.Navigate(toppage);
         }
 
+
         #endregion
-
-
+        
     }
 }

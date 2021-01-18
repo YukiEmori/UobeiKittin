@@ -52,7 +52,7 @@
                ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="18" FontFamily="Yu Gothic UI Semibold"  ></Label>
 
         <!--ボタン-->
-        <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7" Click="Button_Click"></Button>
+        <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7" Click="Close_Click"></Button>
         <Button Content="マイナスオーダー" Grid.Column="5" Grid.Row="2" FontSize="20" Margin="7,7,10,7"></Button>
         <Button Content="▲" Grid.Column="4" Grid.Row="1" FontSize="20" Margin="5,35,5,35"></Button>
         <Button Content="▼" Grid.Column="4" Grid.Row="3" FontSize="20" Margin="5,35,5,35"></Button>

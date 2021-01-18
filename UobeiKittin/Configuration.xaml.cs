@@ -22,11 +22,16 @@ namespace UobeiKittin {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
+        //閉じるボタン
+        private void Close_Click(object sender, RoutedEventArgs e) {
             var toppege = new Top();
             NavigationService.Navigate(toppege);
         }
 
+        //握りボタン
+        private void Nigiri_Click_1(object sender, RoutedEventArgs e) {
+
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
@@ -39,9 +44,5 @@ namespace UobeiKittin {
         }
 
         
-
-        private void Button_Click_1(object sender, RoutedEventArgs e) {
-
-        }
     }
 }
