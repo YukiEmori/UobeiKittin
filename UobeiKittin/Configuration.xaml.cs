@@ -37,5 +37,11 @@ namespace UobeiKittin {
             System.Windows.Data.CollectionViewSource 商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
             商品テーブルViewSource.View.MoveCurrentToFirst();
         }
+
+        
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
