@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="Beige" >
     <Window.Resources>
-        <local:SushiOrderDBDataSet x:Key="sushiOrderDBDataSet"/>
-        <CollectionViewSource x:Key="testViewSource" Source="{Binding test, Source={StaticResource sushiOrderDBDataSet}}"/>
+       
     </Window.Resources>
 
-    <Grid DataContext="{StaticResource testViewSource}">
+    <Grid >
         <Frame Name="frame" NavigationUIVisibility="Hidden" Source="{Binding}"/>
 
     </Grid>

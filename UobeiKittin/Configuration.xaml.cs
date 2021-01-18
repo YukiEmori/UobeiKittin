@@ -26,5 +26,16 @@ namespace UobeiKittin {
             var toppege = new Top();
             NavigationService.Navigate(toppege);
         }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+
+            UobeiKittin.SushiOrderDBproduct sushiOrderDBproduct = ((UobeiKittin.SushiOrderDBproduct)(this.FindResource("sushiOrderDBproduct")));
+            // テーブル 商品テーブル にデータを読み込みます。必要に応じてこのコードを変更できます。
+            UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter sushiOrderDBproduct商品テーブルTableAdapter = new UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter();
+            sushiOrderDBproduct商品テーブルTableAdapter.Fill(sushiOrderDBproduct.商品テーブル);
+            System.Windows.Data.CollectionViewSource 商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
+            商品テーブルViewSource.View.MoveCurrentToFirst();
+        }
     }
 }

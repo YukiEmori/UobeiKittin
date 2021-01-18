@@ -5,10 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UobeiKittin"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" Background="Beige"
+      d:DesignHeight="450" d:DesignWidth="800" Background="Beige" Loaded="Window_Loaded"
       Title="Configuration">
+    <Page.Resources>
+        <local:SushiOrderDBproduct x:Key="sushiOrderDBproduct"/>
+        <CollectionViewSource x:Key="商品テーブルViewSource" Source="{Binding 商品テーブル, Source={StaticResource sushiOrderDBproduct}}"/>
+    </Page.Resources>
 
-    <Grid>
+    <Grid DataContext="{StaticResource 商品テーブルViewSource}">
         <!--行-->
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -44,5 +48,17 @@
         <Button Content="品切解除" Grid.Column="5" Grid.Row="5" FontSize="20" Margin="7"></Button>
         <Button Content="品切設定" Grid.Column="5" Grid.Row="3" FontSize="20" Margin="7"></Button>
         <Button Content="登録" Grid.Column="5" Grid.Row="6" FontSize="20" Margin="7"></Button>
+        
+        <!--データベース-->
+        <DataGrid x:Name="商品テーブルDataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="4" Grid.Column="1" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="7,10,126,30" Grid.Row="2" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="product_idColumn" Binding="{Binding Product_id}" Header="Product id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="Type" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="priceColumn" Binding="{Binding Price}" Header="Price" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="pictureColumn" Binding="{Binding Picture}" Header="Picture" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="Status" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
