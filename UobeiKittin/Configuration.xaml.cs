@@ -22,17 +22,7 @@ namespace UobeiKittin {
             InitializeComponent();
         }
 
-        //閉じるボタン
-        private void Close_Click(object sender, RoutedEventArgs e) {
-            var toppege = new Top();
-            NavigationService.Navigate(toppege);
-        }
-
-        //握りボタン
-        private void Nigiri_Click_1(object sender, RoutedEventArgs e) {
-
-        }
-
+        //WPFを起動したときに実行する
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
             UobeiKittin.SushiOrderDBproduct sushiOrderDBproduct = ((UobeiKittin.SushiOrderDBproduct)(this.FindResource("sushiOrderDBproduct")));
@@ -43,6 +33,50 @@ namespace UobeiKittin {
             商品テーブルViewSource.View.MoveCurrentToFirst();
         }
 
-        
+        //閉じるボタン
+        private void Close_Click(object sender, RoutedEventArgs e) {
+            var toppege = new Top();
+            NavigationService.Navigate(toppege);
+        }
+
+        //握りボタン
+        private void Nigiri_Click_1(object sender, RoutedEventArgs e) {
+            UobeiKittin.SushiOrderDBproduct sushiOrderDBproduct = ((UobeiKittin.SushiOrderDBproduct)(this.FindResource("sushiOrderDBproduct")));
+            //テーブル 商品テーブル にデータを読み込みます。必要に応じてこのコードを変更できます。
+            UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter sushiOrderDBproduct商品テーブルTableAdapter = new UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter();
+            sushiOrderDBproduct商品テーブルTableAdapter.FillByType01(sushiOrderDBproduct.商品テーブル);
+            System.Windows.Data.CollectionViewSource 商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
+            商品テーブルViewSource.View.MoveCurrentToFirst();
+        }
+
+        //軍艦巻物ボタン
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            UobeiKittin.SushiOrderDBproduct sushiOrderDBproduct = ((UobeiKittin.SushiOrderDBproduct)(this.FindResource("sushiOrderDBproduct")));
+            //テーブル 商品テーブル にデータを読み込みます。必要に応じてこのコードを変更できます。
+            UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter sushiOrderDBproduct商品テーブルTableAdapter = new UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter();
+            sushiOrderDBproduct商品テーブルTableAdapter.FillByType02(sushiOrderDBproduct.商品テーブル);
+            System.Windows.Data.CollectionViewSource 商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
+            商品テーブルViewSource.View.MoveCurrentToFirst();
+        }
+
+        //サイドボタン
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+            UobeiKittin.SushiOrderDBproduct sushiOrderDBproduct = ((UobeiKittin.SushiOrderDBproduct)(this.FindResource("sushiOrderDBproduct")));
+            //テーブル 商品テーブル にデータを読み込みます。必要に応じてこのコードを変更できます。
+            UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter sushiOrderDBproduct商品テーブルTableAdapter = new UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter();
+            sushiOrderDBproduct商品テーブルTableAdapter.FillByType03(sushiOrderDBproduct.商品テーブル);
+            System.Windows.Data.CollectionViewSource 商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
+            商品テーブルViewSource.View.MoveCurrentToFirst();
+        }
+
+        //デザートドリンクボタン
+        private void Button_Click_2(object sender, RoutedEventArgs e) {
+            UobeiKittin.SushiOrderDBproduct sushiOrderDBproduct = ((UobeiKittin.SushiOrderDBproduct)(this.FindResource("sushiOrderDBproduct")));
+            //テーブル 商品テーブル にデータを読み込みます。必要に応じてこのコードを変更できます。
+            UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter sushiOrderDBproduct商品テーブルTableAdapter = new UobeiKittin.SushiOrderDBproductTableAdapters.商品テーブルTableAdapter();
+            sushiOrderDBproduct商品テーブルTableAdapter.FillByType04(sushiOrderDBproduct.商品テーブル);
+            System.Windows.Data.CollectionViewSource 商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
+            商品テーブルViewSource.View.MoveCurrentToFirst();
+        }
     }
 }

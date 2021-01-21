@@ -74,7 +74,48 @@ SELECT Product_id, Type, Name, Price, Picture, Status FROM 商品テーブル WH
               <Mapping SourceColumn="Picture" DataSetColumn="Picture" />
               <Mapping SourceColumn="Status" DataSetColumn="Status" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SushiOrderDB (Settings)" DbObjectName="SushiOrderDB.dbo.商品テーブル" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByType01" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByType01" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByType01">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      Product_id, Type, Name, Price, Picture, Status
+FROM                         商品テーブル
+WHERE                       (Type = N'01')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SushiOrderDB (Settings)" DbObjectName="SushiOrderDB.dbo.商品テーブル" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByType02" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByType02" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByType02">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      Product_id, Type, Name, Price, Picture, Status
+FROM                         商品テーブル
+WHERE                       (Type = N'02')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SushiOrderDB (Settings)" DbObjectName="SushiOrderDB.dbo.商品テーブル" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByType03" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillByType03" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByType03">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      Product_id, Type, Name, Price, Picture, Status
+FROM                         商品テーブル
+WHERE                       (Type = N'03')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="SushiOrderDB (Settings)" DbObjectName="SushiOrderDB.dbo.商品テーブル" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByType04" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillByType04" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByType04">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      Product_id, Type, Name, Price, Picture, Status
+FROM                         商品テーブル
+WHERE                       (Type = N'04')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -84,7 +125,7 @@ SELECT Product_id, Type, Name, Price, Picture, Status FROM 商品テーブル WH
   <xs:element name="SushiOrderDBproduct" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SushiOrderDBproduct" msprop:Generator_UserDSName="SushiOrderDBproduct">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="商品テーブル" msprop:Generator_TableClassName="商品テーブルDataTable" msprop:Generator_TableVarName="table商品テーブル" msprop:Generator_TablePropName="商品テーブル" msprop:Generator_RowDeletingName="商品テーブルRowDeleting" msprop:Generator_RowChangingName="商品テーブルRowChanging" msprop:Generator_RowEvHandlerName="商品テーブルRowChangeEventHandler" msprop:Generator_RowDeletedName="商品テーブルRowDeleted" msprop:Generator_UserTableName="商品テーブル" msprop:Generator_RowChangedName="商品テーブルRowChanged" msprop:Generator_RowEvArgName="商品テーブルRowChangeEvent" msprop:Generator_RowClassName="商品テーブルRow">
+        <xs:element name="商品テーブル" msprop:Generator_TableClassName="商品テーブルDataTable" msprop:Generator_TableVarName="table商品テーブル" msprop:Generator_RowChangedName="商品テーブルRowChanged" msprop:Generator_TablePropName="商品テーブル" msprop:Generator_RowDeletingName="商品テーブルRowDeleting" msprop:Generator_RowChangingName="商品テーブルRowChanging" msprop:Generator_RowEvHandlerName="商品テーブルRowChangeEventHandler" msprop:Generator_RowDeletedName="商品テーブルRowDeleted" msprop:Generator_RowClassName="商品テーブルRow" msprop:Generator_UserTableName="商品テーブル" msprop:Generator_RowEvArgName="商品テーブルRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Product_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProduct_id" msprop:Generator_ColumnPropNameInRow="Product_id" msprop:Generator_ColumnPropNameInTable="Product_idColumn" msprop:Generator_UserColumnName="Product_id" type="xs:int" />

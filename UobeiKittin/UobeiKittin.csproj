@@ -60,6 +60,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SushiOrderDBproduct.cs">
+      <DependentUpon>SushiOrderDBproduct.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SushiOrderDBproduct.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
