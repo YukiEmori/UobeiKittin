@@ -8,8 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800" Background="Beige" 
       Title="Top">
     <Page.Resources>
-        <local:SushiOrderDBDataSet x:Key="sushiOrderDBDataSet"/>
-        <CollectionViewSource x:Key="testViewSource" Source="{Binding test, Source={StaticResource sushiOrderDBDataSet}}"/>
+       
     </Page.Resources>
 
     <Grid >

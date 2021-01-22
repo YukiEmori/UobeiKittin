@@ -20,8 +20,7 @@ namespace UobeiKittin {
     /// </summary>
     public partial class Top : Page {
 
-        UobeiKittin.SushiOrderDBDataSet sushiOrderDBDataSet;
-        UobeiKittin.SushiOrderDBDataSetTableAdapters.testTableAdapter sushiOrderDBDataSettestTableAdapter;
+        
 
         public Top() {
             InitializeComponent();

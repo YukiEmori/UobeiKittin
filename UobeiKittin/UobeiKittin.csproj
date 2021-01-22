@@ -55,10 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SushiOrderDBDataSet.Designer.cs">
+    <Compile Include="SushiOrderDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
+      <DependentUpon>SushiOrderDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="SushiOrderDBproduct.cs">
       <DependentUpon>SushiOrderDBproduct.xsd</DependentUpon>
@@ -124,16 +124,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="SushiOrderDBDataSet.xsc">
-      <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
+    <None Include="SushiOrderDBDataSet1.xsc">
+      <DependentUpon>SushiOrderDBDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="SushiOrderDBDataSet.xsd">
+    <None Include="SushiOrderDBDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SushiOrderDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>SushiOrderDBDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SushiOrderDBDataSet.xss">
-      <DependentUpon>SushiOrderDBDataSet.xsd</DependentUpon>
+    <None Include="SushiOrderDBDataSet1.xss">
+      <DependentUpon>SushiOrderDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="SushiOrderDBproduct.xsc">
       <DependentUpon>SushiOrderDBproduct.xsd</DependentUpon>

@@ -5,10 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UobeiKittin"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" Background="Beige"
+      d:DesignHeight="450" d:DesignWidth="800" Background="Beige" Loaded="Window_Load"
       Title="orderlist">
+    <Page.Resources>
+        <local:SushiOrderDBDataSet1 x:Key="sushiOrderDBDataSet1"/>
+        <CollectionViewSource x:Key="注文情報ViewSource" Source="{Binding 注文情報, Source={StaticResource sushiOrderDBDataSet1}}"/>
 
-    <Grid>
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource 注文情報ViewSource}">
         <!--行-->
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -56,6 +61,17 @@
         <Button Content="マイナスオーダー" Grid.Column="5" Grid.Row="2" FontSize="20" Margin="7,7,10,7"></Button>
         <Button Content="▲" Grid.Column="4" Grid.Row="1" FontSize="20" Margin="5,35,5,35"></Button>
         <Button Content="▼" Grid.Column="4" Grid.Row="3" FontSize="20" Margin="5,35,5,35"></Button>
+
+        <!--データベース-->
+        <DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="4" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="46,0,0,10" Grid.Row="1" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="orderColumn" Binding="{Binding Order}" Header="発注時刻" Width="*"/>
+                <DataGridTextColumn x:Name="offerColumn" Binding="{Binding Offer}" Header="提供時刻" Width="*"/>
+                <DataGridTextColumn x:Name="offerTimeColumn" Binding="{Binding OfferTime}" Header="提供時間" Width="*"/>
+                <DataGridTextColumn x:Name="product_nameColumn" Binding="{Binding Product_name}" Header="商品名" Width="2*"/>
+                <DataGridTextColumn x:Name="quantityColumn" Binding="{Binding Quantity}" Header="数量" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>
