@@ -63,7 +63,7 @@
         <Button Content="▼" Grid.Column="4" Grid.Row="3" FontSize="20" Margin="5,35,5,35"></Button>
 
         <!--データベース-->
-        <DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="4" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="46,0,10,10" Grid.Row="1" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="4" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="46,0,10,0" Grid.Row="1" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected"  >
             <!--DataGridヘッダーの文字位置を変更-->
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
