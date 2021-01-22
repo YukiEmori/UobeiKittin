@@ -53,8 +53,14 @@
 
         <!--データベース-->
         <DataGrid x:Name="Product_DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="5" Grid.Column="1" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="7,10,10,7" Grid.Row="2" Grid.RowSpan="4" RowDetailsVisibilityMode="VisibleWhenSelected"   >
+            <!--DataGridヘッダーの文字位置を変更-->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="product_idColumn" Binding="{Binding Product_id}" Header="商品コード" IsReadOnly="True" Width="*" FontSize="23"/>
+                <DataGridTextColumn x:Name="product_idColumn" Binding="{Binding Product_id}" Header="商品コード" IsReadOnly="True" Width="*" FontSize="23" />
                 <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Name}" Header="商品名" Width="2*" FontSize="23" IsReadOnly="True"/>
                 <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="状態" Width="*" FontSize="23" IsReadOnly="True"/>
             </DataGrid.Columns>
