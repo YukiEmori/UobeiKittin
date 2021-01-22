@@ -5,14 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UobeiKittin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="850" Background="Beige" >
-    <Window.Resources>
-       
-    </Window.Resources>
-
-    <Grid >
-        <Frame Name="frame" NavigationUIVisibility="Hidden" Source="{Binding}"/>
-
+        Title="MainWindow" Height="450" Width="850" Background="Beige"  >
+    <Grid>
+        <Frame Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>
+
+
 
 </Window>

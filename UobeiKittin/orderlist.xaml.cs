@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -21,14 +22,20 @@ namespace UobeiKittin {
     /// </summary>
     /// 
 
-   
+
     public partial class orderlist : Page {
         public orderlist() {
             InitializeComponent();
         }
 
+        //public static readonly int kIndex_notSelected = -1;
+        //private int lastIndex = kIndex_notSelected; // DataGridの最後の選択
+        //private ObservableCollection<Person> myList;
+
+
+
         UobeiKittin.SushiOrderDBDataSet1 sushiOrderDBDataSet1;
-        UobeiKittin.SushiOrderDBDataSet1TableAdapters.注文情報TableAdapter sushiOrderDBDataSet1注文情報TableAdapter;
+       UobeiKittin.SushiOrderDBDataSet1TableAdapters.注文情報TableAdapter sushiOrderDBDataSet1注文情報TableAdapter;
         System.Windows.Data.CollectionViewSource 注文情報ViewSource;
 
         #region　ページ移動
@@ -86,7 +93,20 @@ namespace UobeiKittin {
 
         //マイナスオーダーボタン
         private void Mainasu_Click(object sender, RoutedEventArgs e) {
+            //if (lastIndex == kIndex_notSelected) {
+            //    return;
+            //}
+            //Person prsn = 注文情報DataGrid.Items[lastIndex] as Person;
+            //myList.Remove(prsn);
 
+            //MessageBox.Show("deleted " + prsn.Name);
+            //lastIndex = kIndex_notSelected;
         }
+
+        //public class Person {
+        //    public string Name { get; set; }
+        //    public string Race { get; set; }
+        //    public string Codename { get; set; }
+        //}
     }
 }
