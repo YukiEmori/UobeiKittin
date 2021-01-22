@@ -18,13 +18,7 @@ namespace UobeiKittin {
             frame.Source = uri;
         }
         
-        private void Order(object sender, RoutedEventArgs e) {
-                  
-        }
-
-        private void btconfig_Click(object sender, RoutedEventArgs e) {
-           
-        }
+       
 
         
     }

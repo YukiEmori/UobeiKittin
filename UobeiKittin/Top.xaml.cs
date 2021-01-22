@@ -19,6 +19,10 @@ namespace UobeiKittin {
     /// Top.xaml の相互作用ロジック
     /// </summary>
     public partial class Top : Page {
+
+        UobeiKittin.SushiOrderDBDataSet sushiOrderDBDataSet;
+        UobeiKittin.SushiOrderDBDataSetTableAdapters.testTableAdapter sushiOrderDBDataSettestTableAdapter;
+
         public Top() {
             InitializeComponent();
         }
@@ -46,15 +50,7 @@ namespace UobeiKittin {
             NavigationService.Navigate(orderpage);
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e) {
-
-            UobeiKittin.SushiOrderDBDataSet sushiOrderDBDataSet = ((UobeiKittin.SushiOrderDBDataSet)(this.FindResource("sushiOrderDBDataSet")));
-            // テーブル test にデータを読み込みます。必要に応じてこのコードを変更できます。
-            UobeiKittin.SushiOrderDBDataSetTableAdapters.testTableAdapter sushiOrderDBDataSettestTableAdapter = new UobeiKittin.SushiOrderDBDataSetTableAdapters.testTableAdapter();
-            sushiOrderDBDataSettestTableAdapter.Fill(sushiOrderDBDataSet.test);
-            System.Windows.Data.CollectionViewSource testViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("testViewSource")));
-            testViewSource.View.MoveCurrentToFirst();
-        }
+        
 
 
     }
