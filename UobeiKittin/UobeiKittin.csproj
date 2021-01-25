@@ -68,9 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SushiOrderDBproduct.xsd</DependentUpon>
     </Compile>
-    <Compile Include="test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Top.xaml.cs">
       <DependentUpon>Top.xaml</DependentUpon>
     </Compile>
@@ -94,10 +91,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Orderlist.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

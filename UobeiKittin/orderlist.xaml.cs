@@ -92,11 +92,18 @@ namespace UobeiKittin {
 
         //マイナスオーダーボタン
         private void Mainasu_Click(object sender, RoutedEventArgs e) {
-            //selectedRow = FindParent<DataGridRow>(sender as DependencyObject);
+            
+            //選択している行データを取得
+            DataRowView drv = (DataRowView)注文情報ViewSource.View.CurrentItem;
+            //行の削除
+            drv.Row.Delete();
         }
 
-     
+        //登録ボタン
+        private void Touroku_Click(object sender, RoutedEventArgs e) {
+            sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
         }
+    }
 
 
 
