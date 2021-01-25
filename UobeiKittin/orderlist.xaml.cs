@@ -92,8 +92,8 @@ namespace UobeiKittin {
 
         //マイナスオーダーボタン
         private void Mainasu_Click(object sender, RoutedEventArgs e) {
-           
-            }
+            //selectedRow = FindParent<DataGridRow>(sender as DependencyObject);
+        }
 
      
         }

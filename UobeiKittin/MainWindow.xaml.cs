@@ -17,9 +17,9 @@ namespace UobeiKittin {
             Uri uri = new Uri("/Top.xaml", UriKind.Relative);
             frame.Source = uri;
         }
-        
-       
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
