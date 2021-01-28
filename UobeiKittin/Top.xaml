@@ -5,13 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UobeiKittin"
       mc:Ignorable="d"                                           
-      d:DesignHeight="450" d:DesignWidth="800" Background="Beige" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="Beige" Loaded="Window_Loaded"
       Title="Top">
     <Page.Resources>
-       
+
+        <local:SushiOrderDBDataSet1 x:Key="sushiOrderDBDataSet1"/>
+        <CollectionViewSource x:Key="注文情報ViewSource" Source="{Binding 注文情報, Source={StaticResource sushiOrderDBDataSet1}}"/>
+
     </Page.Resources>
 
-    <Grid >
+    <Grid DataContext="{StaticResource 注文情報ViewSource}" >
         <!--行-->
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -63,8 +66,56 @@
         <!--平均タイム時間-->
         <Label Content="0:00" Grid.Row="0" Grid.Column="5"  Margin="0,5,29,22"
                Background="DarkGray" Foreground="Black" VerticalContentAlignment="Center"
-               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold" 
-               />
+               ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold"/>
+
+        <!--注文表示ボタン1-->
+        <Button x:Name="Order1" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order2" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden"  Grid.ColumnSpan="2"/>
+        <Button x:Name="Order3" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order4" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order5" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order6" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order7" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden"  Grid.ColumnSpan="2"/>
+        <Button x:Name="Order8" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order9" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order10" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order11" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden"  Grid.ColumnSpan="2" />
+        <Button x:Name="Order12" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" Grid.ColumnSpan="3" />
+        <Button x:Name="Order13" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order14" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+        <Button x:Name="Order15" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" />
+
+        <!--データベース-->
+        <!--<DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="5" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="82,18,158,18" Grid.Row="2" Grid.RowSpan="2" RowDetailsVisibilityMode="VisibleWhenSelected" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="product_idColumn" Binding="{Binding Product_id}" Header="Product id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="starttimeColumn" Binding="{Binding Starttime}" Header="Starttime" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="orderColumn" Binding="{Binding Order}" Header="Order" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="offerColumn" Binding="{Binding Offer}" Header="Offer" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="offerTimeColumn" Binding="{Binding OfferTime}" Header="Offer Time" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="product_nameColumn" Binding="{Binding Product_name}" Header="Product name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="quantityColumn" Binding="{Binding Quantity}" Header="Quantity" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="sum_priceColumn" Binding="{Binding Sum_price}" Header="Sum price" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="Status" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>-->
+
 
 
     </Grid>

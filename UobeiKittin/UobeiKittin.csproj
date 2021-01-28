@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SushiOrderDBDataSet1.cs">
+      <DependentUpon>SushiOrderDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SushiOrderDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
