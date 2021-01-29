@@ -69,12 +69,12 @@
                ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold"/>
 
         <!--注文表示ボタン1-->
-        <Button x:Name="Order1" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+        <Button x:Name="Order1" Content="" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
+                Visibility="Hidden" Click="order_Click1" />
         <Button x:Name="Order2" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden"  Grid.ColumnSpan="2"/>
+                Visibility="Hidden"  Grid.ColumnSpan="2" Click="order_Click2"/>
         <Button x:Name="Order3" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click3"/>
         <Button x:Name="Order4" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
                 Visibility="Hidden" />
         <Button x:Name="Order5" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"

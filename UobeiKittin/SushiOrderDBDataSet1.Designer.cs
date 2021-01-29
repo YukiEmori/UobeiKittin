@@ -1193,7 +1193,7 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quanti" +
@@ -1204,6 +1204,11 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
             this._commandCollection[1].CommandText = "SELECT                      COUNT(*) AS Expr1\r\nFROM                         注文情報\r" +
                 "\nGROUP BY              Status\r\nHAVING                  (Status = N\'未\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT                      ID\r\nFROM                         注文情報\r\nWHERE         " +
+                "              (Status = N\'未\')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1225,6 +1230,30 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual SushiOrderDBDataSet1.注文情報DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            SushiOrderDBDataSet1.注文情報DataTable dataTable = new SushiOrderDBDataSet1.注文情報DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Status(SushiOrderDBDataSet1.注文情報DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SushiOrderDBDataSet1.注文情報DataTable GetDataBy1() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             SushiOrderDBDataSet1.注文情報DataTable dataTable = new SushiOrderDBDataSet1.注文情報DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
