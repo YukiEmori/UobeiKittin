@@ -109,6 +109,7 @@ namespace UobeiKittin {
             btn.SetBinding(ToggleButton.IsCheckedProperty, new Binding("IsOpen") { Source = btn.ContextMenu });
             btn.ContextMenu.PlacementTarget = btn;
             btn.ContextMenu.Placement = PlacementMode.Bottom;
+            
         }
 
         //売切れ設定ページに移動
