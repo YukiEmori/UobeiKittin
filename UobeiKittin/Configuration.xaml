@@ -65,5 +65,6 @@
                 <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="状態" Width="*" FontSize="23" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
+        
     </Grid>
 </Page>

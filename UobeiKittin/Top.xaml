@@ -70,35 +70,36 @@
 
         <!--注文表示ボタン1-->
         <Button x:Name="Order1" Content="" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" Click="order_Click1" />
+                Visibility="Hidden" Click="order_Click1" FontSize="22" />
         <Button x:Name="Order2" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden"  Grid.ColumnSpan="2" Click="order_Click2"/>
+                Visibility="Hidden"  Grid.ColumnSpan="2" Click="order_Click2" FontSize="22"/>
         <Button x:Name="Order3" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" Click="order_Click3"/>
+                Visibility="Hidden" Click="order_Click3" FontSize="22"/>
         <Button x:Name="Order4" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click4" FontSize="22"/>
         <Button x:Name="Order5" Content="Button" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click5" FontSize="22"/>
         <Button x:Name="Order6" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click6" FontSize="22"/>
         <Button x:Name="Order7" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden"  Grid.ColumnSpan="2"/>
+                Visibility="Hidden"  Grid.ColumnSpan="2" Click="order_Click7" FontSize="22"/>
         <Button x:Name="Order8" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click8" FontSize="22"/>
         <Button x:Name="Order9" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click9" FontSize="22"/>
         <Button x:Name="Order10" Content="Button" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click10" FontSize="22"/>
         <Button x:Name="Order11" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden"  Grid.ColumnSpan="2" />
+                Visibility="Hidden"  Grid.ColumnSpan="2"  Click="order_Click11" FontSize="22"/>
         <Button x:Name="Order12" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" Grid.ColumnSpan="3" />
+                Visibility="Hidden" Grid.ColumnSpan="3" Click="order_Click12"  FontSize="22"/>
         <Button x:Name="Order13" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="3" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden"  Click="order_Click13" FontSize="22" />
         <Button x:Name="Order14" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="4" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden"  Click="order_Click14" FontSize="22"/>
         <Button x:Name="Order15" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
-                Visibility="Hidden" />
+                Visibility="Hidden" Click="order_Click15" FontSize="22"/>
+        <Button Grid.ColumnSpan="2" Content="Button" HorizontalAlignment="Left" Margin="150,31,0,0" VerticalAlignment="Top" Width="20" Click="syokika"/>
 
         <!--データベース-->
         <!--<DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="5" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="82,18,158,18" Grid.Row="2" Grid.RowSpan="2" RowDetailsVisibilityMode="VisibleWhenSelected" >

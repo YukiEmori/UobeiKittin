@@ -668,7 +668,8 @@ namespace UobeiKittin {
         public partial class 注文情報Row : global::System.Data.DataRow {
             
             private 注文情報DataTable table注文情報;
-            
+            internal object oldRecord;
+
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal 注文情報Row(global::System.Data.DataRowBuilder rb) : 

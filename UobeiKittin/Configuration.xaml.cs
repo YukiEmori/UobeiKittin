@@ -36,6 +36,7 @@ namespace UobeiKittin {
             sushiOrderDBproduct商品テーブルTableAdapter.Fill(sushiOrderDBproduct.商品テーブル);
             商品テーブルViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("商品テーブルViewSource")));
             商品テーブルViewSource.View.MoveCurrentToFirst();
+
         }
 
         //閉じるボタン
@@ -52,7 +53,7 @@ namespace UobeiKittin {
         //握りボタン
         private void Nigiri_Click_1(object sender, RoutedEventArgs e) {
            sushiOrderDBproduct商品テーブルTableAdapter.FillByType01(sushiOrderDBproduct.商品テーブル);
-            
+           
         }
 
         //軍艦巻物ボタン
