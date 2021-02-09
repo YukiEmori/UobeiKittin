@@ -83,7 +83,7 @@ namespace UobeiKittin {
            sushiOrderDBDataSet1 = ((UobeiKittin.SushiOrderDBDataSet1)(this.FindResource("sushiOrderDBDataSet1")));
            // テーブル 注文情報 にデータを読み込みます。必要に応じてこのコードを変更できます。
            sushiOrderDBDataSet1注文情報TableAdapter = new UobeiKittin.SushiOrderDBDataSet1TableAdapters.注文情報TableAdapter();
-           sushiOrderDBDataSet1注文情報TableAdapter.Fill(sushiOrderDBDataSet1.注文情報);
+           sushiOrderDBDataSet1注文情報TableAdapter.teikyouzumi(sushiOrderDBDataSet1.注文情報);
            注文情報ViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("注文情報ViewSource")));
            注文情報ViewSource.View.MoveCurrentToFirst();
 
@@ -94,8 +94,22 @@ namespace UobeiKittin {
         private void Mainasu_Click(object sender, RoutedEventArgs e) {
             //選択している行データを取得
             DataRowView drv = (DataRowView)注文情報ViewSource.View.CurrentItem;
-            //行の削除
-            drv.Row.Delete();
+            int count = int.Parse(drv[7].ToString());
+
+            if(count != 0) {
+                count--;
+            }
+
+            drv[7] = count;
+
+            if(count == 0) {
+                drv[8] = 0;
+                drv[9] = "-";
+            } else {
+                drv[8] = (int.Parse(drv[8].ToString()) / ++count) * --count;
+            }
+            
+            
         }
 
         //登録ボタン

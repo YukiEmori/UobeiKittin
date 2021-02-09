@@ -64,7 +64,7 @@
                />
 
         <!--平均タイム時間-->
-        <Label Content="0:00" Grid.Row="0" Grid.Column="5"  Margin="0,5,29,22"
+        <Label x:Name="Averegetime" Content="0:00" Grid.Row="0" Grid.Column="5"  Margin="0,5,29,22"
                Background="DarkGray" Foreground="Black" VerticalContentAlignment="Center"
                ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" FontSize="22" FontWeight="Bold"/>
 

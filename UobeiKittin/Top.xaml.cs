@@ -31,6 +31,8 @@ namespace UobeiKittin {
         System.Windows.Data.CollectionViewSource 注文情報ViewSource;
 
         //初期値
+        int counts;
+        int countss;
         int count = 0;
         string statustei = "〇";
         string statusmi = "未";
@@ -44,11 +46,12 @@ namespace UobeiKittin {
             sushiOrderDBDataSet1注文情報TableAdapter.Fill(sushiOrderDBDataSet1.注文情報);
             注文情報ViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("注文情報ViewSource")));
             注文情報ViewSource.View.MoveCurrentToFirst();
-                                    
+
             BtVisibility(sender, e);
             BtNameQuantitl(sender, e);
             count = 0;
             Timers(sender, e);
+            Averegetimes();
         }
 
 
@@ -91,20 +94,19 @@ namespace UobeiKittin {
         }
 
         //未提供の場所(行)を持ってくる。
-        private int[] mitegyou() {
-            
+        private  int[] mitegyou() {
             var nums = sushiOrderDBDataSet1.注文情報.Where(x => x.Status.Contains("未")).Select(x => x.ID).ToArray();
             return nums;
-            
         }
-
+        
         //ボタン表示と名前と数量反映
         private void BtNameQuantitl(object sender, RoutedEventArgs e) {
+
             for (int i = 0; i < miteikyou(); i++) {
                 var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[i]];
                 if (drv[9].ToString() == statusmi && count == 0) {
                     Order1.Visibility = Visibility.Visible;
-                    Order1.Content = " " + drv[6] + "\n\n数量："+drv[7].ToString();
+                    Order1.Content = " " + drv[6] + "\n\n数量：" + drv[7].ToString();
                     count++;
                 } else if (drv[9].ToString() == statusmi && count == 1) {
                     Order2.Visibility = Visibility.Visible;
@@ -169,13 +171,17 @@ namespace UobeiKittin {
         #region　注文された商品が押された時の動作
         //注文ボタン1つ目
         private void order_Click1(object sender, RoutedEventArgs e) {
+            
             Order1.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[0]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
-            
-            
+            Averegetimes();
+
+
         }
 
         //注文ボタン2つ目
@@ -183,8 +189,11 @@ namespace UobeiKittin {
             Order2.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[1]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
 
         }
 
@@ -193,8 +202,11 @@ namespace UobeiKittin {
             Order3.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[2]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
 
         //注文ボタン4つ目
@@ -202,8 +214,11 @@ namespace UobeiKittin {
             Order4.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[3]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
 
         //注文ボタン5つ目
@@ -211,88 +226,121 @@ namespace UobeiKittin {
             Order5.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[4]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン6つ目
         private void order_Click6(object sender, RoutedEventArgs e) {
             Order6.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[5]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン7つ目
         private void order_Click7(object sender, RoutedEventArgs e) {
             Order7.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[6]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン8つ目
         private void order_Click8(object sender, RoutedEventArgs e) {
             Order8.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[7]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン9つ目
         private void order_Click9(object sender, RoutedEventArgs e) {
             Order9.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[8]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン10つ目
         private void order_Click10(object sender, RoutedEventArgs e) {
             Order10.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[9]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン11つ目
         private void order_Click11(object sender, RoutedEventArgs e) {
             Order11.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[10]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン12つ目
         private void order_Click12(object sender, RoutedEventArgs e) {
             Order12.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[11]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン13つ目
         private void order_Click13(object sender, RoutedEventArgs e) {
             Order13.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[12]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン14つ目
         private void order_Click14(object sender, RoutedEventArgs e) {
             Order14.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[13]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
         //注文ボタン15つ目
         private void order_Click15(object sender, RoutedEventArgs e) {
             Order15.Visibility = Visibility.Hidden;
             var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[14]];
             drv[9] = statustei;
+            drv[4] = Time(sender, e);
+            drv[5] = TimeSpan.Parse(drv[4].ToString()) - TimeSpan.Parse(drv[3].ToString());
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
             count = 0;
+            Averegetimes();
         }
 
 
@@ -303,13 +351,13 @@ namespace UobeiKittin {
         private void BtVisibility(object sender, RoutedEventArgs e) {
             if (miteikyou() < 1) {
                 Order1.Visibility = Visibility.Hidden;
-            } 
+            }
             if (miteikyou() < 2) {
                 Order2.Visibility = Visibility.Hidden;
-            } 
+            }
             if (miteikyou() < 3) {
                 Order3.Visibility = Visibility.Hidden;
-            }  
+            }
             if (miteikyou() < 4) {
                 Order4.Visibility = Visibility.Hidden;
             }
@@ -355,7 +403,7 @@ namespace UobeiKittin {
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             //1秒間隔に設定
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0,1 );
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             dispatcherTimer.Start();
         }
 
@@ -373,15 +421,64 @@ namespace UobeiKittin {
             count = 0;
         }
 
-        //後で消す
-        private void syokika(object sender, RoutedEventArgs e) {
-            for (int i = 0; i < 21; i++) {
-                var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[i];
-                drv[9] = "未";
-                sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
-            }
+        //日本の現在の時刻を持ってくる
+        private TimeSpan Time(object sender, RoutedEventArgs e) {
+            //日本時間のタイムゾーン
+            var jstZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time");
+            DateTime utc = DateTime.UtcNow;
+            DateTime dt = TimeZoneInfo.ConvertTimeFromUtc(utc, jstZoneInfo);
+            TimeSpan ts = dt.TimeOfDay;
+
+            return ts;
         }
 
-        
+        //後で消す
+        private void syokika(object sender, RoutedEventArgs e) {
+            for (int i = 0; i < 11; i++) {
+                var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[i];
+                Time(sender, e);
+                drv[3] = Time(sender, e);
+                drv[4] = DBNull.Value;
+                drv[5] = DBNull.Value;
+                drv[9] = "未";
+                
+                sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
+            }
+
+        }
+        //平均タイム時間
+        private void Averegetimes() {
+            int sum_count = 0;
+            var tm = sushiOrderDBDataSet1.注文情報.Where(x => x.Status.Contains("〇")).Select(x=> x.OfferTime);
+            int ct = sushiOrderDBDataSet1.注文情報.Where(x => x.Status.Contains("〇")).Count();
+            foreach (TimeSpan item in tm) {
+                counts += item.Seconds;
+                countss += item.Minutes * 60;
+            }
+
+            if(ct != 0) {
+                sum_count = (counts + countss) / ct;
+            }
+            
+            if(sum_count % 60 <= 9) {
+                Averegetime.Content = ("0:0" + sum_count % 60);
+            }
+            if (sum_count/60 != 0 && sum_count % 60 <= 9) {
+                Averegetime.Content = (sum_count/60 + ":0" + sum_count % 60);
+            }
+            if (sum_count%60 > 9) {
+                Averegetime.Content = (sum_count/60  + ":" +  sum_count % 60);
+            }//ここ
+            counts = 0;
+            countss = 0;
+            
+
+            
+            
+        }
+
+       
+
+
     }
 }

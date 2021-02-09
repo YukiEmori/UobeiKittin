@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UobeiKittin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="490" Width="850" Background="Beige"  >
+        Title="魚べいキッチン" Height="490" Width="850" Background="Beige"  >
     <Grid>
         <Frame Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>

@@ -668,8 +668,7 @@ namespace UobeiKittin {
         public partial class 注文情報Row : global::System.Data.DataRow {
             
             private 注文情報DataTable table注文情報;
-            internal object oldRecord;
-
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal 注文情報Row(global::System.Data.DataRowBuilder rb) : 
@@ -1194,7 +1193,7 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quanti" +
@@ -1210,6 +1209,13 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
             this._commandCollection[2].CommandText = "SELECT                      ID\r\nFROM                         注文情報\r\nWHERE         " +
                 "              (Status = N\'未\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT                      ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quantity, Sum_price, Status
+FROM                         注文情報
+WHERE                       (Status = N'〇') OR
+                                      (Status = N'-')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1255,6 +1261,30 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual SushiOrderDBDataSet1.注文情報DataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            SushiOrderDBDataSet1.注文情報DataTable dataTable = new SushiOrderDBDataSet1.注文情報DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int teikyouzumi(SushiOrderDBDataSet1.注文情報DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SushiOrderDBDataSet1.注文情報DataTable GetDataBy2() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             SushiOrderDBDataSet1.注文情報DataTable dataTable = new SushiOrderDBDataSet1.注文情報DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
