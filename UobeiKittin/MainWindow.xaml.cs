@@ -18,6 +18,12 @@ namespace UobeiKittin {
             frame.Source = uri;
         }
 
-      
+        private void OnDragMoveWindow(object sender, System.Windows.Input.MouseButtonEventArgs e) {
+            DragMove();
+        }
+
+       public void Closes() {
+            Close();
+        }
     }
-}
+    }

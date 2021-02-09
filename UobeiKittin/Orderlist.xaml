@@ -40,7 +40,11 @@
                     <Separator />
                     <MenuItem Header="売り切れ設定" Click="config_Click"  />
                     <Separator />
-                    <MenuItem Header="閉じる" Click="MenuItem_Click"/>
+                    <MenuItem Header="オーダーリスト削除"/>
+                    <Separator />
+                    <MenuItem Header="閉じる" Click="Top_page"/>
+                    <Separator />
+                    <MenuItem Header="終了" Click="Closes_Click" />
                 </ContextMenu>
             </ToggleButton.ContextMenu>
             <WrapPanel Margin="5,0">

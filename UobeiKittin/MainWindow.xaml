@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UobeiKittin"
         mc:Ignorable="d"
+        WindowStyle='None'
+        AllowsTransparency='True'
+       
         Title="魚べいキッチン" Height="490" Width="850" Background="Beige"  >
     <Grid>
+        <Border Background='White' >
+            <HeaderedContentControl>
+                <HeaderedContentControl.Header>
+                    <Grid MouseDown='OnDragMoveWindow'>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width='*' />
+                            <ColumnDefinition Width='Auto' />
+                        </Grid.ColumnDefinitions>
+
+                        <Rectangle Grid.ColumnSpan='2'
+                                   Fill='Gray' />
+
+                        <TextBlock Grid.Column='0'
+                                   FontSize='15'
+                                   Foreground="White"
+                                   VerticalAlignment='Center'
+                                   Margin="5"
+                                   Text='MainWindow CustomBar' />
+                    </Grid>
+                </HeaderedContentControl.Header>
+            </HeaderedContentControl>
+        </Border>
         <Frame Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>
 

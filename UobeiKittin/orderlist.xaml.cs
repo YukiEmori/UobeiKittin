@@ -75,6 +75,17 @@ namespace UobeiKittin {
             NavigationService.Navigate(toppage);
         }
 
+        //終了ボタン
+        private void Closes_Click(object sender, RoutedEventArgs e) {
+
+            Application.Current.Shutdown();
+        }
+
+        //閉じるボタン
+        private void Top_page(object sender, RoutedEventArgs e) {
+            Topseni(sender, e);
+        }
+
 
         #endregion
 
@@ -117,8 +128,6 @@ namespace UobeiKittin {
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
         }
 
-
-
-
+        
     }
 }

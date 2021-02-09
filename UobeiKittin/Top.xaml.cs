@@ -103,7 +103,8 @@ namespace UobeiKittin {
         private void BtNameQuantitl(object sender, RoutedEventArgs e) {
 
             for (int i = 0; i < miteikyou(); i++) {
-                var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[mitegyou()[i]];
+                int []index = mitegyou();
+                var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[index[i]];
                 if (drv[9].ToString() == statusmi && count == 0) {
                     Order1.Visibility = Visibility.Visible;
                     Order1.Content = " " + drv[6] + "\n\n数量：" + drv[7].ToString();
@@ -403,7 +404,7 @@ namespace UobeiKittin {
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             //1秒間隔に設定
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+            dispatcherTimer.Interval = new TimeSpan(0,0,0,1);
             dispatcherTimer.Start();
         }
 
@@ -477,8 +478,12 @@ namespace UobeiKittin {
             
         }
 
-       
+        private void MenuItem_Click(object sender, RoutedEventArgs e) {
 
+        }
 
+        private void Close_Click(object sender, RoutedEventArgs e) {
+            Application.Current.Shutdown();
+        }
     }
 }
