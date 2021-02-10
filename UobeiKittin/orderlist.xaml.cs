@@ -98,13 +98,18 @@ namespace UobeiKittin {
            注文情報ViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("注文情報ViewSource")));
            注文情報ViewSource.View.MoveCurrentToFirst();
 
+            //var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Count();
+
         }
         
 
         //マイナスオーダーボタン
         private void Mainasu_Click(object sender, RoutedEventArgs e) {
+            
             //選択している行データを取得
             DataRowView drv = (DataRowView)注文情報ViewSource.View.CurrentItem;
+           
+
             int count = int.Parse(drv[7].ToString());
 
             if(count != 0) {
@@ -119,6 +124,9 @@ namespace UobeiKittin {
             } else {
                 drv[8] = (int.Parse(drv[8].ToString()) / ++count) * --count;
             }
+
+            
+            touroku.IsEnabled = true;
             
             
         }
@@ -126,6 +134,7 @@ namespace UobeiKittin {
         //登録ボタン
         private void Touroku_Click(object sender, RoutedEventArgs e) {
             sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
+            touroku.IsEnabled = false;
         }
 
         

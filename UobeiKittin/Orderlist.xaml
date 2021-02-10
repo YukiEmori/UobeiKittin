@@ -36,13 +36,11 @@
         <ToggleButton Loaded="ToggleButton_Loaded" Grid.Column="0" Grid.Row="0" Margin="5,6,21,22">
             <ToggleButton.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="オーダーリスト" Click="order_Click" />
+                    <MenuItem Header="オーダーリスト" Click="order_Click" IsEnabled="False" />
                     <Separator />
                     <MenuItem Header="売り切れ設定" Click="config_Click"  />
                     <Separator />
-                    <MenuItem Header="オーダーリスト削除"/>
-                    <Separator />
-                    <MenuItem Header="閉じる" Click="Top_page"/>
+                    <MenuItem Header="閉じる" Click="Top_page" IsEnabled="True"/>
                     <Separator />
                     <MenuItem Header="終了" Click="Closes_Click" />
                 </ContextMenu>
@@ -62,10 +60,10 @@
 
         <!--ボタン-->
         <Button Content="閉じる" Grid.Column="0" Grid.Row="4" FontSize="20" Margin="7,7,21,7" Click="Close_Click"></Button>
-        <Button Content="マイナスオーダー" Grid.Column="5" Grid.Row="2" FontSize="20" Margin="7,7,10,7" Click="Mainasu_Click"></Button>
+        <Button x:Name="mainasu" Content="マイナスオーダー" Grid.Column="5" Grid.Row="2" FontSize="20" Margin="7,7,10,7" Click="Mainasu_Click" ></Button>
         <Button Content="▲" Grid.Column="4" Grid.Row="1" FontSize="20" Margin="5,35,5,35"></Button>
         <Button Content="▼" Grid.Column="4" Grid.Row="3" FontSize="20" Margin="5,35,5,35"></Button>
-        <Button Content="登録" Grid.Column="5" Grid.Row="4" FontSize="20" Margin="10,7" Click="Touroku_Click"/>
+        <Button x:Name="touroku" Content="登録" Grid.Column="5" Grid.Row="4" FontSize="20" Margin="10,7" Click="Touroku_Click" IsEnabled="False"/>
 
         <!--データベース-->
         <DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="4" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="46,0,10,10" Grid.Row="1" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected"  >

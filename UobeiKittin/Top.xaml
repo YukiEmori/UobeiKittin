@@ -41,9 +41,7 @@
                     <Separator />
                     <MenuItem Header="売り切れ設定" Click="config_Click"  />
                     <Separator />
-                    <MenuItem Header="オーダーリスト削除"/>
-                    <Separator />
-                    <MenuItem Header="閉じる"/>
+                    <MenuItem Header="閉じる" IsEnabled="False"/>
                     <Separator />
                     <MenuItem Header="終了" Click="Close_Click" />
                 </ContextMenu>
@@ -103,7 +101,6 @@
                 Visibility="Hidden"  Click="order_Click14" FontSize="22"/>
         <Button x:Name="Order15" Content="Button" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="5" VerticalAlignment="Top" Width="170" Height="119"
                 Visibility="Hidden" Click="order_Click15" FontSize="22"/>
-        <Button Grid.ColumnSpan="2" Content="Button" HorizontalAlignment="Left" Margin="150,31,0,0" VerticalAlignment="Top" Width="20" Click="syokika"/>
 
         <!--データベース-->
         <!--<DataGrid x:Name="注文情報DataGrid" AutoGenerateColumns="False" Grid.ColumnSpan="5" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="82,18,158,18" Grid.Row="2" Grid.RowSpan="2" RowDetailsVisibilityMode="VisibleWhenSelected" >

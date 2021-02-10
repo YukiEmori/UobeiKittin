@@ -75,6 +75,11 @@ namespace UobeiKittin {
             NavigationService.Navigate(orderpage);
         }
 
+        //終了ボタン
+        private void Close_Click(object sender, RoutedEventArgs e) {
+            Application.Current.Shutdown();
+        }
+
         //件数カウント
         private int miteikyou() {
             //未の数を持ってくる
@@ -433,20 +438,7 @@ namespace UobeiKittin {
             return ts;
         }
 
-        //後で消す
-        private void syokika(object sender, RoutedEventArgs e) {
-            for (int i = 0; i < 11; i++) {
-                var drv = (DataRow)sushiOrderDBDataSet1.注文情報.Rows[i];
-                Time(sender, e);
-                drv[3] = Time(sender, e);
-                drv[4] = DBNull.Value;
-                drv[5] = DBNull.Value;
-                drv[9] = "未";
-                
-                sushiOrderDBDataSet1注文情報TableAdapter.Update(sushiOrderDBDataSet1.注文情報);
-            }
-
-        }
+        
         //平均タイム時間
         private void Averegetimes() {
             int sum_count = 0;
@@ -477,13 +469,6 @@ namespace UobeiKittin {
             
             
         }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e) {
-
-        }
-
-        private void Close_Click(object sender, RoutedEventArgs e) {
-            Application.Current.Shutdown();
-        }
+              
     }
 }

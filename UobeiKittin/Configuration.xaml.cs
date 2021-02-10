@@ -48,46 +48,79 @@ namespace UobeiKittin {
         //全て表示ボタン
         private void All_Click(object sender, RoutedEventArgs e) {
             Window_Loaded(sender, e);
+            subete.IsEnabled = false;
+            nigiri.IsEnabled = true;
+            gunkan.IsEnabled = true;
+            saido.IsEnabled = true;
+            dezato.IsEnabled = true;
+            touroku.IsEnabled = false;
+
         }
 
         //握りボタン
         private void Nigiri_Click_1(object sender, RoutedEventArgs e) {
            sushiOrderDBproduct商品テーブルTableAdapter.FillByType01(sushiOrderDBproduct.商品テーブル);
-           
+            subete.IsEnabled = true;
+            nigiri.IsEnabled = false;
+            gunkan.IsEnabled = true;
+            saido.IsEnabled = true;
+            dezato.IsEnabled = true;
+            touroku.IsEnabled = false;
+
         }
 
         //軍艦巻物ボタン
         private void Gunkan_Click(object sender, RoutedEventArgs e) {
            sushiOrderDBproduct商品テーブルTableAdapter.FillByType02(sushiOrderDBproduct.商品テーブル);
+            subete.IsEnabled = true;
+            nigiri.IsEnabled = true;
+            gunkan.IsEnabled = false;
+            saido.IsEnabled = true;
+            dezato.IsEnabled = true;
+            touroku.IsEnabled = false;
         }
 
         //サイドボタン
         private void Saido_Click_1(object sender, RoutedEventArgs e) {
             sushiOrderDBproduct商品テーブルTableAdapter.FillByType03(sushiOrderDBproduct.商品テーブル);
-         
+
+            subete.IsEnabled = true;
+            nigiri.IsEnabled = true;
+            gunkan.IsEnabled = true;
+            saido.IsEnabled = false;
+            dezato.IsEnabled = true;
+            touroku.IsEnabled = false;
         }
         //デザート・ドリンクボタン
         private void Drink_Click(object sender, RoutedEventArgs e) {
             sushiOrderDBproduct商品テーブルTableAdapter.FillByType04(sushiOrderDBproduct.商品テーブル);
+            subete.IsEnabled = true;
+            nigiri.IsEnabled = true;
+            gunkan.IsEnabled = true;
+            saido.IsEnabled = true;
+            dezato.IsEnabled = false;
+            touroku.IsEnabled = false;
         }
 
         //品切れ設定ボタン
         private void Settei_Click(object sender, RoutedEventArgs e) {
             DataRowView drv = (DataRowView)商品テーブルViewSource.View.CurrentItem;
             drv.Row[5] = "販売終了";
-
+            touroku.IsEnabled = true;
         }
 
         //品切れ解除ボタン
         private void Setteikaijyo(object sender, RoutedEventArgs e) {
             DataRowView drv = (DataRowView)商品テーブルViewSource.View.CurrentItem;
-            drv.Row[5] = null;
+            drv.Row[5] = "販売中";
+            touroku.IsEnabled = true;
         }
 
         
         //登録ボタン
         private void Touroku_Click(object sender, RoutedEventArgs e) {
             sushiOrderDBproduct商品テーブルTableAdapter.Update(sushiOrderDBproduct.商品テーブル);
+            touroku.IsEnabled = false;
         }
     }
 }

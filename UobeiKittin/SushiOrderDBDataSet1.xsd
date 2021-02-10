@@ -111,6 +111,14 @@ SELECT ID, Product_id, Starttime, [Order], Offer, OfferTime, Product_name, Quant
               <Mapping SourceColumn="Status" DataSetColumn="Status" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="SushiOrderDB (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM       注文情報</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
               <DbSource ConnectionRef="SushiOrderDB (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
